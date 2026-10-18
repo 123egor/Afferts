@@ -1,19 +1,4 @@
 import * as component from './component.js';
-import * as sort from './cardSort.js';
-import { basketAdd } from './basket.js';
-
-const catalogList = document.querySelector('.catalog__list');
-
-async function getAllCards() {
-    const response = await fetch("./data/data.json");
-    const data = await response.json();
-
-    data.forEach((card) => {
-        const listItem = getCard(card);
-        catalogList.append(listItem);
-    })
-
-}
 
 export function getCard(card) {
     const listItem = component.getListItem("", "catalog__item");
@@ -140,13 +125,9 @@ export function getCard(card) {
     productCard.append(productCardVisual, productCardInfo);
     listItem.append(productCard);
 
-    productCardLinkCart.addEventListener('click', (e) => {
-        e.preventDefault();
-        basketAdd(card);
-    });
+    productCardLinkCart.dataset.id = card.id;
+    productCardLinkCart.classList.add('product-card__cart-btn')
 
     return listItem;
 
-}
-
-getAllCards();
+};

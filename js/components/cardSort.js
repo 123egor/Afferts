@@ -1,4 +1,3 @@
-import {getCard} from "./getCard.js";
 import {filterCards} from './cardFilter.js';
 
 const sortSelect = document.querySelector('.catalog__sort-select');

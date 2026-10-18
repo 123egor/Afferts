@@ -8,6 +8,21 @@ const basketCount = document.querySelector('.header__user-count');
 const basketLink = document.querySelector('.basket__link');
 
 let basketItems = []
+let allCard = []
+
+export function setAllCard (card) {
+    allCard = card
+}
+
+document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.product-card__cart-btn')
+    if(!btn) return;
+    e.preventDefault();
+    const card = allCard.find(item => item.id == Number(btn.dataset.id));
+    if(card){
+        basketAdd(card)
+    }
+});
 
 
 basketBtn.addEventListener('click', function (e) {

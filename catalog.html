@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
   <title>Каталог товаров - Briaton</title>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
 </head>
 
 <body>
@@ -561,11 +563,12 @@
             <div class="questions__inner">
               <div class="custom-input">
                 <label for="name" class="custon-input__label">Ваше имя</label>
-                <input type="text" class="custom-input__field" id="name" placeholder="Светлана">
+                <input type="text" class="custom-input__field" id="name" name="name" placeholder="Светлана">
               </div>
               <div class="custom-input">
                 <label for="email" class="custon-input__label">Ваша почта</label>
-                <input type="email" class="custom-input__field" id="email" placeholder="example@example.com">
+                <input type="email" class="custom-input__field" id="email" name="email"
+                  placeholder="example@example.com">
               </div>
               <button class="questions__btn btn btn--big" type="submit">Отправить заявку</button>
             </div>
@@ -661,8 +664,6 @@
   </footer>
   <script src="./js/vendor/swiper.js"></script>
   <script src="./js/vendor/just-validate.js"></script>
-  <script src="./js/vendor/popprjs.min.js"></script>
-  <script src="./js/vendor/tippy.min.js"></script>
   <script src="./js/main.js" type="module"></script>
 </body>
 
